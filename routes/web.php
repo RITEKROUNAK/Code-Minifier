@@ -1,18 +1,77 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
+/*
+|--------------------------------------------------------------------------
+| Web Routes for home page
+|--------------------------------------------------------------------------
+*/
+Route::get('/home', 'HomeController@index');
+Route::get('/', 'HomeController@index');
+
 
 /*
 |--------------------------------------------------------------------------
-| Web Routes
+| Routes to minify css code.
 |--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
 */
+Route::get('/css-minify', 'HomeController@cssView');
+Route::post('/css-minify', 'HomeController@minifyCss');
 
-Route::get('/', function () {
-    return view('welcome');
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes for minifying javascript code
+|--------------------------------------------------------------------------
+*/
+Route::get('/js-minify', 'HomeController@jsView');
+Route::post('/js-minify', 'HomeController@minifyJavascript');
+
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes for minifying HTML code
+|--------------------------------------------------------------------------
+*/
+Route::get('/html-minify', 'HomeController@htmlView');
+Route::post('/html-minify', 'HomeController@minifyHtml');
+
+
+/*
+|--------------------------------------------------------------------------
+| This route will display about page
+|--------------------------------------------------------------------------
+*/
+Route::get('/about', function (){
+    return view('about');
 });
+
+
+/*
+|--------------------------------------------------------------------------
+| Web routes to manage contact page
+|--------------------------------------------------------------------------
+*/
+Route::get('/contact', function (){
+    return view('contact');
+});
+Route::post('/contact', 'HomeController@contact');
+
+
+/*
+|--------------------------------------------------------------------------
+| This route will display an error page
+|--------------------------------------------------------------------------
+*/
+Route::get('error', function (){
+    return view('404');
+});
+
+
+/*
+|--------------------------------------------------------------------------
+| Redirect all non existing page to error page
+|--------------------------------------------------------------------------
+*/
+Route::any('{catchall}', function() {
+    return redirect('/error');
+})->where('catchall', '.*');
