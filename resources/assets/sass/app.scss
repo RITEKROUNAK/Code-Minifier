@@ -1,0 +1,347 @@
+
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*This is main CSS file that contains custom styles used in this template*/
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/* Package Name: Code Minifier*/
+/* Author: Ritek Rounak */
+/* Copyright: (C) 2022 */
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+/*Styles start from here
+/*-------------------------------------------------------------------------------------------------------------------------------*/
+
+@import "variables";
+body{
+  margin: 0px;
+  padding: 0px;
+  background-color: #eee;
+}
+.home{
+  min-height: calc(100vh - 120px);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h2{
+    font-family: $font-family-sans-serif;
+    color: #333;
+    font-size: 36px;
+    font-weight: 600;
+    span{
+      color: $primary-color;
+      font-size: 42px;
+      font-weight: 600;
+    }
+  }
+  p{
+    font:600 14px $font-family-sans-serif;
+    color: #333;
+    line-height: 22px;
+  }
+}
+.navbar{
+  margin-bottom: 0;
+  border-radius: 0;
+}
+.search-form{
+  margin: 20px 0px;
+  .input-group{
+    width:70%;
+    margin: 0 auto;
+    position: relative;
+  }
+  input{
+    background-color: transparent;
+    height: 52px;
+    border: #FFF solid 2px;
+    border-radius: 5px !important;
+    padding:5px 15px;
+    color: #FFF;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: $font-family-sans-serif;
+    &:focus{
+      border-color: $primary-color;
+    }
+  }
+  button{
+    height: 48px;
+    background-color: #333;
+    color: #FFF;
+    padding: 2px 15px;
+    line-height: 45px;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    width: 150px;
+    border: none;
+    font-size: 22px;
+    font-weight: 600;
+    font-family: $font-family-sans-serif;
+    outline: none;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    z-index: 100;
+    text-transform: uppercase;
+    transition-duration: 0.6s;
+    &:hover{
+      background-color: $primary-color;
+    }
+  }
+}
+@keyframes  rotate{
+  to{
+    transform: rotate(360deg);
+  }
+}
+
+.loader{
+  position: absolute;
+  background-color: rgba(0,0,0,0.94);
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  color: #FFF;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  i{
+    animation: rotate 2.5s linear infinite;
+    &.big{
+      font-size: 100px;
+    }
+    &.small{
+      font-size: 50px;
+    }
+  }
+}
+.error-text{
+  font:400 16px $font-family-sans-serif;
+  color: #FFF;
+  text-align: left;
+  display: block;
+  padding:8px 15px;
+  margin: 0;
+}
+#gbar, #guser, .gbh, td#leftnav, #rhs_block, #resultStats, ._cD{
+  display: none;
+}
+table#mn{
+  tbody:nth-of-type(1){
+    display: none;
+  }
+}
+table#nav{
+  tbody{
+    display: block !important;
+  }
+}
+
+.typed-cursor{
+  opacity: 1;
+  -webkit-animation: blink 0.7s infinite;
+  -moz-animation: blink 0.7s infinite;
+  animation: blink 0.7s infinite;
+}
+@keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+@-moz-keyframes blink{
+  0% { opacity:1; }
+  50% { opacity:0; }
+  100% { opacity:1; }
+}
+.action-buttons{
+  a{
+    display: inline-block;
+    padding: 8px 22px;
+    font:600 16px $font-family-sans-serif;
+    color: #FFF;
+    border-radius: 20px;
+    margin: 15px;
+    transition-duration: 0.4s;
+    &:hover{
+      text-decoration: none;
+      outline: none;
+    }
+
+  }
+}
+footer{
+  background-color: $primary-color;
+  text-align: center;
+  height: 60px;
+  color: #FFF;
+  overflow: hidden;
+  p{
+    margin: 0;
+    padding: 20px 0;
+    font-size: 16px;
+    a{
+      color: #333333;
+    }
+  }
+}
+.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus{
+  color: #FFF;
+  background-color: rgba(0,0,0,0.2);
+}
+.content-minify{
+  padding: 30px 0;
+  min-height: calc(100vh - 120px);
+  h2{
+    font-family: $font-family-sans-serif;
+    color: #333;
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 0;
+  }
+  p{
+    font:600 14px $font-family-sans-serif;
+    color: #333;
+    line-height: 22px;
+  }
+  .panel{
+    margin-top: 20px;
+    border-radius: 2px;
+  }
+  .panel-body{
+    padding: 0;
+  }
+  .panel-heading{
+    border-radius: 0;
+  }
+  textarea{
+    background-color: #303030;
+    width: 100%;
+    height: 300px;
+    resize: none;
+    outline: none;
+    color: #FFF;
+    padding: 15px;
+  }
+  button{
+    padding: 8px 22px;
+    font:600 16px $font-family-sans-serif;
+    color: #FFF;
+    border-radius: 20px;
+    outline: none;
+  }
+}
+
+.minified_output{
+  background-color: #303030;
+  height: 300px;
+  resize: none;
+  outline: none;
+  color: #FFF;
+  padding: 15px;
+  overflow-y: auto;
+  word-break: break-all;
+}
+::selection {
+  background: #ffb7b7;
+}
+::-moz-selection {
+  background: #ffb7b7;
+}
+.about_page{
+  padding: 30px 0;
+  min-height: calc(100vh - 120px);
+
+}
+.about-text{
+  margin: 30px 0;
+}
+.contact-form{
+  label{
+    color: #333;
+  }
+  .form-control{
+    background-color: #303030;
+    color: #FFF;
+  }
+  textarea{
+    height: 120px;
+  }
+
+}
+.contact-text{
+  margin: 30px 0;
+  ul{
+    li{
+      color: #333;
+      margin: 10px 0;
+      i{
+        margin-right: 10px;
+      }
+    }
+  }
+}
+.social-links{
+  li{
+    display: inline-block;
+    a{
+      display: block;
+      width: 32px;
+      height: 32px;
+      border: #333 solid 1px;
+      color: #333;
+      border-radius: 50px;
+      transition-duration: 0.5s;
+      text-align: center;
+      padding-top: 6px;
+      margin: 5px;
+      &:hover{
+        outline: none;
+        text-decoration: none;
+        background-color: $primary-color;
+        color: #FFF;
+        border-color: $primary-color;
+      }
+      i{
+        margin: 0;
+      }
+    }
+  }
+}
+.navbar-toggle{
+  border-radius: 0;
+  border: none;
+}
+.navbar-brand{
+  strong{
+    font-weight: 700;
+    text-transform: uppercase;
+    font-family: 'GFS Didot', serif;
+  }
+}
+.error-page{
+  color: #333;
+  height: calc(100vh - 180px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1{
+    font-weight: 700;
+    font-size: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+  footer{
+    height: auto;
+  }
+  footer p{
+    padding: 10px 0;
+  }
+  
+}
